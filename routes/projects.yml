@@ -2,3 +2,11 @@ getProject:
   handler: controllers/project.getById
   events:
     - httpApi: GET /project/{id}
+getProjects:
+  handler: controllers/projects.get
+  events:
+    - httpApi: GET /projects
+createProject:
+  handler: controllers/projects.create
+  events:
+    - httpApi: POST /projects
