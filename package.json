@@ -1,5 +1,8 @@
 {
   "name": "portfolio-api",
   "version": "1.0.0",
-  "description": ""
+  "description": "",
+  "dependencies": {
+    "node-fetch": "^3.2.10"
+  }
 }
