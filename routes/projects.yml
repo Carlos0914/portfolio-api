@@ -3,10 +3,10 @@ getProject:
   events:
     - httpApi: GET /project/{id}
 getProjects:
-  handler: controllers/projects.get
+  handler: controllers/project.get
   events:
     - httpApi: GET /projects
 createProject:
-  handler: controllers/projects.create
+  handler: controllers/project.create
   events:
     - httpApi: POST /projects
