@@ -1,8 +1,8 @@
-const fetch = require('node-fetch')
+const fetch = (...args) => import('node-fetch').then(({default: fetch}) => fetch(...args));
 
 const settings = {
   baseURL: process.env.MONGODB_DATA_API_URL,
-  apiKEY: process.env.MONGODB_DATA_API_KEY,
+  apiKey: process.env.MONGODB_DATA_API_KEY,
   dataSource: process.env.MONGODB_DATA_SOURCE,
   dbName: process.env.DB_NAME,
 };
@@ -71,17 +71,18 @@ const DBApiRequest = async (collection, action, body) => {
     dataSource: settings.dataSource,
     ...documentParams,
   });
+  const url = `${settings.baseURL}/action/${action === "findById" ? "findOne" : action}`
 
   return fetch(
-    `${settings.baseURL}/${action === "findById" ? "findOne" : action}`,
+    url,
     {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
         "Access-Control-Request-Headers": "*",
-        "api-key": settings.apiKEY,
+        "api-key": settings.apiKey,
       },
-      data,
+      body: data,
     }
   );
 };

@@ -11,8 +11,8 @@ module.exports.getById = async (event, context) => {
 }
 
 module.exports.get = async (event, context) => {
-    let { page = "1", limit = "10" } = event.queryStringParamaters
-    page = parseInt(page),
+    let { page = "1", limit = "10" } = event.queryStringParamaters || {}
+    page = parseInt(page)
     limit = parseInt(limit) 
     const response = await DBApiRequest("projects", "find", { skip: (page-1)*limit, limit})
     const projects = await response.json()
