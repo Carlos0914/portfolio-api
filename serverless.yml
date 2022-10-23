@@ -6,9 +6,10 @@ frameworkVersion: '3'
 provider:
   name: aws
   runtime: nodejs14.x
+  environment: 
+    MONGODB_DATA_API_URL: ${param:mongodb-data-api-url}
+    MONGODB_DATA_API_KEY: ${param:mongodb-data-api-key}
 
 functions:
-  api:
-    handler: handler.handler
-    events:
-      - httpApi: '*'
+  - ${file(./routes/functionsSpec.yml)}
+  - ${file(./routes/projects.yml)}

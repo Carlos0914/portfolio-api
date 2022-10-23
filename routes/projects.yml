@@ -1,0 +1,4 @@
+getProject:
+  handler: controllers/project.getById
+  events:
+    - httpApi: GET /project/{id}

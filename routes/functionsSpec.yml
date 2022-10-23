@@ -1,0 +1,8 @@
+getRoot:
+  handler: handler.handleRoot
+  events:
+    - httpApi: GET /
+getPath:
+  handler: handler.handlePath
+  events:
+    - httpApi: GET /hello
