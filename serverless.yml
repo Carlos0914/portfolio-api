@@ -17,3 +17,6 @@ provider:
 functions:
   - ${file(./routes/functionsSpec.yml)}
   - ${file(./routes/projects.yml)}
+
+plugins:
+  - serverless-offline

@@ -4,5 +4,8 @@
   "description": "",
   "dependencies": {
     "node-fetch": "^3.2.10"
+  },
+  "devDependencies": {
+    "serverless-offline": "^11.1.3"
   }
 }

@@ -24,9 +24,12 @@ module.exports.get = async (event, context) => {
 }
 
 module.exports.create = async (event, context) => {
+    console.log("HELLO")
     const body = JSON.parse(event.body)
+    console.log(body)
     const response = await DBApiRequest("projects", "insertOne", body)
     const project = await response.json()
+    console.log(responseHandler({status: 'success', project}))
     return responseHandler({
         status: 'success',
         project
