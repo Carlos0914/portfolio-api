@@ -11,6 +11,8 @@ provider:
     MONGODB_DATA_API_KEY: ${param:mongodb-data-api-key}
     MONGODB_DATA_SOURCE: ${param:data-source}
     DB_NAME: ${param:database-name}
+  httpApi:
+    cors: true
 
 functions:
   - ${file(./routes/functionsSpec.yml)}

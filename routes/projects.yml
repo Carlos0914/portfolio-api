@@ -2,14 +2,11 @@ getProject:
   handler: controllers/project.getById
   events:
     - httpApi: GET /project/{id}
-  cors: true
 getProjects:
   handler: controllers/project.get
   events:
     - httpApi: GET /projects
-  cors: true
 createProject:
   handler: controllers/project.create
   events:
     - httpApi: POST /projects
-  cors: true
