@@ -1,0 +1,5 @@
+uploadAsset:
+  handler: controllers/assets.upload
+  events:
+    - httpApi: POST /assets
+  timeout: 10
