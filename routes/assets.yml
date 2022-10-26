@@ -1,5 +1,4 @@
 uploadAsset:
-  handler: controllers/assets.upload
+  handler: controllers/assets.getSecureUploadURL
   events:
-    - httpApi: POST /assets
-  timeout: 10
+    - httpApi: POST /assets/getSecureUrl
