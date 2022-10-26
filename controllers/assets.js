@@ -18,6 +18,7 @@ module.exports.getSecureUploadURL = async (event, context) => {
   const command = new PutObjectCommand({
     Bucket,
     Key,
+    ACL: 'public-read'
   });
   const signedUrl = await getSignedUrl(s3Client, command, {
     expiresIn: URL_EXPIRATION_SECONDS,
