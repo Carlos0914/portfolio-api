@@ -1,0 +1,12 @@
+getTechnology:
+  handler: controllers/technology.getById
+  events:
+    - httpApi: GET /technology/{id}
+getAllTechnologies:
+  handler: controllers/technology.get
+  events:
+    - httpApi: GET /technologies
+createTechnology:
+  handler: controllers/technology.create
+  events:
+    - httpApi: POST /technologies

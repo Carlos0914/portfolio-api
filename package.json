@@ -2,6 +2,9 @@
   "name": "portfolio-api",
   "version": "1.0.0",
   "description": "",
+  "scripts": {
+    "dev": "nodemon --exec \"serverless offline --httpPort 3001\""
+  },
   "dependencies": {
     "node-fetch": "^3.2.10",
     "parse-multipart": "^1.0.4"
